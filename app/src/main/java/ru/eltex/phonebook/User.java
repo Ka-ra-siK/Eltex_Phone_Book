@@ -13,7 +13,6 @@ public class User {
     private String surname;
     private String patronymic;
     private String phoneNumber;
-    private String address;
 
     public User(String name, String surname, String patronymic,
                 String phoneNumber, String address){
@@ -21,7 +20,6 @@ public class User {
         this.surname = surname;
         this.patronymic = patronymic;
         this.phoneNumber = phoneNumber;
-        this.address = address;
     }
 
     public void setName(String name) {
@@ -56,20 +54,12 @@ public class User {
         return phoneNumber;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public void save(String fileName) throws IOException {
         FileWriter writer = new FileWriter(fileName);
         writer.write(getName()+"\n");
         writer.write(getSurname()+"\n");
         writer.write(getPatronymic()+"\n");
-        writer.write(getAddress()+"\n");
         writer.write(getPhoneNumber()+"\n");
         writer.close();
 
@@ -82,7 +72,6 @@ public class User {
            setName(scan.nextLine());
            setSurname(scan.nextLine());
            setPatronymic(scan.nextLine());
-           setAddress(scan.nextLine());
            setPhoneNumber(scan.nextLine());
         }
         reader.close();
