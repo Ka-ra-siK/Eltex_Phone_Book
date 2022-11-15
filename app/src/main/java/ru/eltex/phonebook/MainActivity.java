@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 new Programmer("Maxim", "Vasilchenko", "Aleksandrovich", "89135436712",
                         "Bluhera 32/1","Junior Embedded C Developer"),
                 new Programmer("Roman", "Shevlyakov", "Valerievich", "89132563245",
-                        "Titova 13", "Junior Embedded C Developer"),
+                        "Titova 13", "Senior Embedded C Developer"),
                 new Manager("Vladislav", "Sizov", "Aleksandrovich", "89140983245",
                         "Koroleva 4", "v.sizov123@mail.ru"),
                 new Manager("Ivan", "Ivanov", "Ivanovich", "89003456789",
