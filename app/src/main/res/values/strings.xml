@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Phone Book</string>
+    <string name="specialization_str">Специальность:</string>
+    <string name="phone_str">Телефон:</string>
+    <string name="name_str">Имя:</string>
+    <string name="programmer">Programmer</string>
+    <string name="manager">Manager</string>
+    <string name="mail_str">Почта:</string>
+    <string name="add_user">Add user</string>
+    <string name="add_user_str">Добавить пользователя</string>
+    <string name="surname_str">Фамилия:</string>
+    <string name="patronymic_str">Отчество:</string>
 </resources>

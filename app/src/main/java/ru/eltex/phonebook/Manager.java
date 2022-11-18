@@ -18,4 +18,13 @@ public class Manager extends User{
         this.eMail = eMail;
     }
 
+    @Override
+    public String toString() {
+        return null;
+    }
+
+    @Override
+    public String toJSONString() {
+        return null;
+    }
 }

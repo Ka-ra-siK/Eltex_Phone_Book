@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class User {
+public abstract class User {
     private String name;
     private String surname;
     private String patronymic;
@@ -55,25 +55,7 @@ public class User {
     }
 
 
-    public void save(String fileName) throws IOException {
-        FileWriter writer = new FileWriter(fileName);
-        writer.write(getName()+"\n");
-        writer.write(getSurname()+"\n");
-        writer.write(getPatronymic()+"\n");
-        writer.write(getPhoneNumber()+"\n");
-        writer.close();
+    public abstract String toString();
 
-    }
-
-    public void load(String fileName) throws IOException {
-        FileReader reader= new FileReader(fileName);
-        Scanner scan = new Scanner(reader);
-        while (scan.hasNextLine()) {
-           setName(scan.nextLine());
-           setSurname(scan.nextLine());
-           setPatronymic(scan.nextLine());
-           setPhoneNumber(scan.nextLine());
-        }
-        reader.close();
-    }
+    public abstract String toJSONString();
 }

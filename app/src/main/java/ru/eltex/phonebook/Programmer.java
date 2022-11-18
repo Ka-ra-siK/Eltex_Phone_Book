@@ -17,4 +17,14 @@ public class Programmer extends User{
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
+
+    @Override
+    public String toString() {
+        return null;
+    }
+
+    @Override
+    public String toJSONString() {
+        return null;
+    }
 }
