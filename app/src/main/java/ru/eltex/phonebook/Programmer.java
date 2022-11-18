@@ -1,6 +1,6 @@
 package ru.eltex.phonebook;
 
-public class Programmer extends User{
+public class Programmer extends User {
 
     private String specialization;
 
@@ -20,11 +20,22 @@ public class Programmer extends User{
 
     @Override
     public String toString() {
-        return null;
+        return "Programmer: " +
+                this.getSurname() + " " +
+                this.getName() + " " +
+                this.getPatronymic() + ", " +
+                this.getPhoneNumber() + ", " +
+                this.getSpecialization();
     }
 
     @Override
     public String toJSONString() {
-        return null;
+        return "{" +
+                "\"surname\": " + this.getSurname() +
+                " \"name\": " + this.getName() +
+                " \"patronymic\": " + this.getName() +
+                ", \"phone\":" + this.getPhoneNumber() +
+                ", \"specialization\":" + this.getSpecialization() +
+                "}";
     }
 }

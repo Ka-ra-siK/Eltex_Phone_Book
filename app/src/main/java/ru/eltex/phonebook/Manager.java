@@ -20,11 +20,22 @@ public class Manager extends User{
 
     @Override
     public String toString() {
-        return null;
+        return "Manager: " +
+                this.getSurname() + " " +
+                this.getName() + " " +
+                this.getPatronymic() + ", " +
+                this.getPhoneNumber() + ", " +
+                this.getMail();
     }
 
     @Override
     public String toJSONString() {
-        return null;
+        return "{" +
+                "\"surname\": " + this.getSurname() +
+                " \"name\": " + this.getName() +
+                " \"patronymic\": " + this.getName() +
+                ", \"phone\":" + this.getPhoneNumber() +
+                ", \"mail\":" + this.getMail() +
+                "}";
     }
 }
