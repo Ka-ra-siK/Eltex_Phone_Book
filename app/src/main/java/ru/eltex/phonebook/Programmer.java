@@ -1,8 +1,15 @@
 package ru.eltex.phonebook;
 
-public class Programmer extends User {
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import ru.eltex.phonebook.serialization.toCSV;
+
+public class Programmer extends User implements toCSV {
 
     private String specialization;
+    private static String FILE_NAME = "programmer.csv";
 
     public Programmer(String name, String surname, String patronymic,
                       String phoneNumber, String address, String specialization) {
@@ -37,5 +44,23 @@ public class Programmer extends User {
                 ", \"phone\":" + this.getPhoneNumber() +
                 ", \"specialization\":" + this.getSpecialization() +
                 "}";
+    }
+
+    @Override
+    public void CSVFileWriter() throws IOException {
+        final BufferedWriter writer= new BufferedWriter(new FileWriter(FILE_NAME));
+        final StringBuilder s = new StringBuilder();
+        s.append(this.getSurname());
+        s.append(",");
+        s.append(this.getName());
+        s.append(",");
+        s.append(this.getPatronymic());
+        s.append(",");
+        s.append(this.getPhoneNumber());
+        s.append(",");
+        s.append(this.getSpecialization());
+        final String line = s.toString();
+        writer.write(line);
+        writer.close();
     }
 }
