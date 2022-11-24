@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class User {
@@ -15,7 +16,7 @@ public abstract class User {
     private String phoneNumber;
 
     public User(String name, String surname, String patronymic,
-                String phoneNumber, String address){
+                String phoneNumber){
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;

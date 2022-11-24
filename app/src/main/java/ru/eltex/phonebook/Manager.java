@@ -1,18 +1,22 @@
 package ru.eltex.phonebook;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import ru.eltex.phonebook.serialization.toCSV;
 
-public class Manager extends User implements toCSV{
+public class Manager extends User implements toCSV {
     private String eMail;
-    private static String FILE_NAME = "manager.csv";
+    private static final String CSV_SEPARATOR = ",";
+    private static final String FILE_NAME = "manager.csv";
 
     public Manager(String name, String surname, String patronymic,
-                   String phoneNumber, String address, String eMail) {
-        super(name, surname, patronymic, phoneNumber, address);
+                   String phoneNumber, String eMail) {
+        super(name, surname, patronymic, phoneNumber);
         this.eMail = eMail;
     }
 
@@ -47,20 +51,22 @@ public class Manager extends User implements toCSV{
     }
 
     @Override
-    public void CSVFileWriter() throws IOException {
-        final BufferedWriter writer= new BufferedWriter(new FileWriter(FILE_NAME));
-        final StringBuilder s = new StringBuilder();
-        s.append(this.getSurname());
-        s.append(",");
-        s.append(this.getName());
-        s.append(",");
-        s.append(this.getPatronymic());
-        s.append(",");
-        s.append(this.getPhoneNumber());
-        s.append(",");
-        s.append(this.getMail());
-        final String line = s.toString();
-        writer.write(line);
-        writer.close();
+    public void CSVFileWriter(List<User> users) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(FILE_NAME), "UTF-8"));
+        for (User user : users) {
+            StringBuffer oneLine = new StringBuffer();
+            oneLine.append(this.getSurname().trim().length() == 0 ? "" : this.getSurname());
+            oneLine.append(CSV_SEPARATOR);
+            oneLine.append(this.getName().trim().length() == 0 ? "" : this.getName());
+            oneLine.append(CSV_SEPARATOR);
+            oneLine.append(this.getPatronymic().trim().length() == 0 ? "" : this.getPatronymic());
+            oneLine.append(CSV_SEPARATOR);
+            oneLine.append(this.getPhoneNumber().trim().length() == 0 ? "" : this.getPhoneNumber());
+            oneLine.append(CSV_SEPARATOR);
+            oneLine.append(this.getMail().trim().length() == 0 ? "" : this.getMail());
+            bw.newLine();
+        }
+        bw.flush();
+        bw.close();
     }
 }

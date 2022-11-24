@@ -1,7 +1,9 @@
 package ru.eltex.phonebook.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.io.IOException;
 import java.util.List;
 
 import ru.eltex.phonebook.Manager;
@@ -22,8 +25,8 @@ import ru.eltex.phonebook.activity.ManagerActivity;
 import ru.eltex.phonebook.activity.ProgrammerActivity;
 
 public class PhoneAdapter extends ArrayAdapter<User> {
-    private Context context;
-    private List<User> users;
+    private final Context context;
+    private final List<User> users;
 
     public PhoneAdapter(Context context, List<User> users) {
         super(context, R.layout.list_item, users);
@@ -31,11 +34,12 @@ public class PhoneAdapter extends ArrayAdapter<User> {
         this.users = users;
     }
 
+    @SuppressLint("SetTextI18n")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.list_item, parent, false);
+        @SuppressLint("ViewHolder") View view = inflater.inflate(R.layout.list_item, parent, false);
 
         TextView name = (TextView) view.findViewById(R.id.name);
         name.setText((this.users.get(position)).getSurname() + " " +
