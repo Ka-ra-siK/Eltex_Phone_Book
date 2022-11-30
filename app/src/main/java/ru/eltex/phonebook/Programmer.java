@@ -15,9 +15,9 @@ public class Programmer extends User implements toCSV {
     private static final String CSV_SEPARATOR = ",";
     private static String FILE_NAME = "programmer.csv";
 
-    public Programmer(String name, String surname, String patronymic,
+    public Programmer(String surname, String name, String patronymic,
                       String phoneNumber, String specialization) {
-        super(name, surname, patronymic, phoneNumber);
+        super(surname, name, patronymic, phoneNumber);
         this.specialization = specialization;
     }
 

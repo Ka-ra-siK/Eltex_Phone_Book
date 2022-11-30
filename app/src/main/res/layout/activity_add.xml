@@ -11,134 +11,201 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add_user"
-        android:textColor="#000000"
         android:textAlignment="center"
-        android:textSize="32dp"/>
+        android:textColor="#000000"
+        android:textSize="32sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="15dp"
-        >
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        tools:ignore="RtlSymmetry">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#000000"
-            android:text="@string/surname_str"/>
+            android:text="@string/surname_str"
+            android:textColor="#000000" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/surname"
-            android:text=""/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="15dp"
-        >
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        tools:ignore="RtlSymmetry">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#000000"
-            android:text="@string/name_str"/>
+            android:text="@string/name_str"
+            android:textColor="#000000" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/name"
-            android:text=""/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="15dp"
-        >
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        tools:ignore="RtlSymmetry">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#000000"
-            android:text="@string/patronymic_str"/>
+            android:text="@string/patronymic_str"
+            android:textColor="#000000" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/patronymic"
-            android:text=""/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="15dp"
-        >
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        tools:ignore="RtlSymmetry">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#000000"
-            android:text="@string/phone_str"/>
+            android:text="@string/phone_str"
+            android:textColor="#000000" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/phone"
-            android:text=""/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="15dp"
-        >
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        tools:ignore="RtlSymmetry">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#000000"
-            android:text="@string/other_str"/>
+            android:text="@string/mail_str"
+            android:textColor="#000000" />
 
         <EditText
+            android:id="@+id/mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/other"
-            android:text=""/>
+            android:text="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/specialization_str"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/specialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal"
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radio_programmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/radio_programmer" />
+
+            <RadioButton
+                android:id="@+id/radio_manager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_manager"
+                android:layout_marginLeft="24dp"
+                android:layout_weight="1"
+                android:checked="false"/>
+
+        </RadioGroup>
+
 
     </LinearLayout>
 
 
     <Button
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_user_str"
-        android:id="@+id/add_btn" />
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:text="@string/add_user_str" />
 
 </LinearLayout>

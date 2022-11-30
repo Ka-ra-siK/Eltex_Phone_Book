@@ -10,6 +10,7 @@
     <string name="add_user_str">Добавить пользователя</string>
     <string name="surname_str">Фамилия:</string>
     <string name="patronymic_str">Отчество:</string>
-    <string name="other_str">Другое:</string>
     <string name="add_user_ru">Добавить пользователя</string>
+    <string name="radio_programmer">Программист</string>
+    <string name="radio_manager">Менеджер</string>
 </resources>

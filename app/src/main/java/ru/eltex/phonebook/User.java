@@ -15,7 +15,7 @@ public abstract class User {
     private String patronymic;
     private String phoneNumber;
 
-    public User(String name, String surname, String patronymic,
+    public User(String surname, String name, String patronymic,
                 String phoneNumber){
         this.name = name;
         this.surname = surname;

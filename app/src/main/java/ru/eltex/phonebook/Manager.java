@@ -14,9 +14,9 @@ public class Manager extends User implements toCSV {
     private static final String CSV_SEPARATOR = ",";
     private static final String FILE_NAME = "manager.csv";
 
-    public Manager(String name, String surname, String patronymic,
+    public Manager(String surname, String name, String patronymic,
                    String phoneNumber, String eMail) {
-        super(name, surname, patronymic, phoneNumber);
+        super(surname, name, patronymic, phoneNumber);
         this.eMail = eMail;
     }
 
