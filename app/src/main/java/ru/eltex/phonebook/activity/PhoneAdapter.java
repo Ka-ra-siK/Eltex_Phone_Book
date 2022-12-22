@@ -3,6 +3,8 @@ package ru.eltex.phonebook.activity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,8 +49,30 @@ public class PhoneAdapter extends ArrayAdapter<User> {
                 (this.users.get(position)).getName() + " " +
                 (this.users.get(position)).getPatronymic());
 
+        name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newContact = new Intent(Intent.ACTION_INSERT);
+                newContact.setType(ContactsContract.Contacts.CONTENT_TYPE);
+                newContact.putExtra(ContactsContract.Intents.Insert.NAME, users.get(position).getSurname() +
+                        " " + users.get(position).getName() +
+                        " " + users.get(position).getPatronymic());
+                newContact.putExtra(ContactsContract.Intents.Insert.PHONE, users.get(position).getPhoneNumber());
+                context.startActivity(newContact);
+
+            }
+        });
+
         TextView phone = (TextView) view.findViewById(R.id.phone);
         phone.setText((this.users.get(position)).getPhoneNumber());
+
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + users.get(position).getPhoneNumber()));
+                context.startActivity(call);
+            }
+        });
 
         TextView otherInformation = (TextView) view.findViewById(R.id.other_info);
         if ((this.users.get(position) instanceof Programmer)) {

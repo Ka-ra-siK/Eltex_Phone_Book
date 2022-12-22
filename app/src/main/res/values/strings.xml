@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Phone Book</string>
+    <string name="app_name">Телефонная книга Eltex</string>
     <string name="specialization_str">Специальность:</string>
     <string name="phone_str">Телефон:</string>
     <string name="name_str">Имя:</string>
